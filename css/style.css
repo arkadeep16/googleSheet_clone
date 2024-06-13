@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  text-transform: capitalize;
+}
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  gap: 20px;
+}
+form input[type='checkbox'],
+form input[type='radio'] {
+  display: none;
+}
+
+form input[type='color'] {
+  visibility: hidden;
+  width: 0.1px;
+  height: 0.1px;
+}
+input + label {
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input:checked + label {
+  background-color: #d3e2fd;
+}
+.row-2 {
+  padding-bottom: 10px;
+  display: flex;
+  max-width: 60vw;
+
+  margin: auto;
+}
+.row-2 input {
+  flex-grow: 1;
+}
+.row-2 .selected-cell {
+  text-align: center;
+  width: 100px;
+}
+.header {
+  /* border: 2px solid red; */
+  display: flex;
+  position: sticky;
+  z-index: 999;
+  top: 0;
+
+  width: fit-content;
+  background-color: #d3e1fc;
+  font-size: 0.8rem;
+}
+.header .cell {
+  min-width: 150px;
+  padding: 5px 2px;
+  text-align: center;
+  border: 1px solid #c4c7c5;
+  flex-flow: row;
+}
+.header .cell:first-child {
+  min-width: 50px;
+}
+.container {
+  height: 80vh;
+  overflow: scroll;
+}
+.body {
+  /* border: 2px solid black; */
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 50px auto;
+}
+.sno-container {
+  position: sticky;
+  left: 0;
+  background-color: #d3e1fc;
+  font-size: 0.8rem;
+}
+
+.sno-container .sno {
+  height: 1.5rem;
+  text-align: center;
+  border: 0.5px solid #c4c7c5;
+}
+
+.body .row-container {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+}
+.row .cell {
+  border: 0.5px solid #c4c7c5;
+  min-width: 150px;
+  min-height: 1.5rem;
+}
+.row .cell:focus {
+  height: auto;
+  outline: none;
+  border: 2px solid #1b72e8;
+}
+.row .active-cell {
+  border: 2px solid #1b72e8;
+}
